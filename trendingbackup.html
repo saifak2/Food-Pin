@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<title>HTML Tutorial</title>
+<style>
+h1{
+  font-size: 50px; color:white;
+}
+p.padding {
+    padding-top: 2cm;
+}
+</style>
+
+
+<body>
+<h1> Trending Page <img src="Lightningarrow2.png" style="width:50px;height:50px;">
+
+ </p> 
+
+
+</h1> 
+<style type="text/css">
+div#map { margin: 0 auto 0 auto; }
+</style>
+
+
+ <div class="container-fluid">
+<div class="app">
+  <div class="row">
+  <div class="col-xs-12">
+<h1 style="background-color:salmon; color:white; text-align:center; padding:25px; width: 200px;">1</h1>
+<h2 style="background-color:salmon; color:white; text-align:center">  <a href = "https://www.cookiedonyc.com/" style="color:white">DŌ, Cookie Dough Confections</a></h2>
+
+
+<div id="map" style="width:400px;height:400px;background:yellow; text-align:center" > </div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(40.7237772,-74.0040974),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+
+var map = new google.maps.Map(document.getElementById("map"), mapOptions) ;
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=modified-legacy-174418&callback=myMap"></script>
+
+
+<style type="text/css">
+div#map2 { margin: 0 auto 0 auto; }
+</style>
+
+
+<h1 style="background-color:salmon; color:white; text-align:center; padding:25px; width: 200px;">2</h1>
+<h2 style="background-color:salmon; color:white; text-align:center;"> <a href = "https://www.myeggloo.com/" style="color:white">Eggloo</a></h2>
+
+
+
+
+
+<div id="map2" style="padding-top: 50px;width:400px;height:400px;background:salmon; text-align:center" > </div>
+
+<script>
+function myMap2() {
+var mapOptions = {
+    center: new google.maps.LatLng(40.758896,-73.985130),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map2 = new google.maps.Map(document.getElementById("map2"), mapOptions) ;
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=modified-legacy-174418&callback=myMap2"></script>
+
+
+<style type="text/css">
+div#map3 { margin: 0 auto 0 auto; }
+</style>
+
+
+<h1 style="background-color:salmon; color:white; text-align:center; padding:25px; width: 200px;">3</h1>
+<h2 style="background-color:salmon; color:white; text-align:center"> <a href = "http://taiyakinyc.com/" style="color:white">Taiyaki NYC</a></h2>
+
+
+<div id="map3" style="padding-top: 50px;width:400px;height:400px;background:salmon; text-align:center" > </div>
+
+<script>
+function myMap3() {
+var mapOptions = {
+    center: new google.maps.LatLng(40.758896,-73.985130),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map3 = new google.maps.Map(document.getElementById("map3"), mapOptions) ;
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=modified-legacy-174418&callback=myMap3"></script>
+
+
+<style type="text/css">
+div#map4 { margin: 0 auto 0 auto; }
+</style>
+
+<h1 style="background-color:salmon; color:white; text-align:center; padding:25px; width: 200px;">4</h1>
+<h2 style="background-color:salmon; color:white; text-align:center"> <a href = "https://www.levainbakery.com/" style="color:white">Levain Bakery</a></h2>
+
+
+<div id="map4" style="padding-top: 50px;width:400px;height:400px;background:salmon; text-align:center" > </div>
+
+<script>
+function myMap4() {
+var mapOptions = {
+    center: new google.maps.LatLng(40.758896,-73.985130),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map4 = new google.maps.Map(document.getElementById("map4"), mapOptions) ;
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=modified-legacy-174418&callback=myMap4"></script>
+
+
+<style type="text/css">
+div#map5 { margin: 0 auto 0 auto; }
+</style>
+
+<h1 style="background-color:salmon; color:white; text-align:center; padding:25px; width: 200px;">5</h1>
+<h2 style="background-color:salmon; color:white; text-align:center;"><a href = "https://blacktapnyc.com/" style="color:white">Black Tap</a></h2>
+
+
+<div id="map5" style="padding-top: 50px;width:400px;height:400px;background:salmon; text-align:center" > </div>
+
+<script>
+function myMap5() {
+var mapOptions = {
+    center: new google.maps.LatLng(40.758896,-73.985130),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map5 = new google.maps.Map(document.getElementById("map5"), mapOptions) ;
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=modified-legacy-174418&callback=myMap5"></script>
+
+
+</div>
+</div>
+  <div>
+  <div>
+
+
+</body>
+
+<body style="background-color: salmon">
+
+
+<h1 style="background-color:salmon; color:white; text-align:center; padding:25px; width: 200px;"><a > </a></h1>
+
+
+</body>
+</html>
+
