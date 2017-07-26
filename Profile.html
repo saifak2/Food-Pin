@@ -1,0 +1,339 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+          /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+          .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+          }
+          
+          /* Remove the jumbotron's default bottom margin */ 
+          .jumbotron {
+            margin-bottom: 0;
+          }
+          
+          /* Add a gray background color and some padding to the footer */
+          footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+          }
+
+          .color-white {
+            color: white;
+          }
+          .app {
+            margin-top:50px;
+          }
+
+          body {
+            background-color: grey;
+          }
+          .navbar{
+            background-color: salmon;
+          }
+    /*==================================================================
+    <!--=============== This is the style for the map ================-->
+    <!--=============================================================-->*/
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #description {
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    #infowindow-content .title {
+      font-weight: bold;
+    }
+
+    #infowindow-content {
+      display: none;
+    }
+
+    #map #infowindow-content {
+      display: inline;
+    }
+
+    .pac-card {
+      margin: 10px 10px 0 0;
+      border-radius: 2px 0 0 2px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      font-family: Roboto;
+    }
+
+    #pac-container {
+      padding-bottom: 12px;
+      margin-right: 12px;
+    }
+
+    .pac-controls {
+      display: inline-block;
+      padding: 5px 11px;
+    }
+
+    .pac-controls label {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    #pac-input {
+      background-color: #fff;
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 300;
+      margin-left: 12px;
+      padding: 0 11px 0 13px;
+      text-overflow: ellipsis;
+      width: 400px;
+    }
+
+    #pac-input:focus {
+      border-color: #4d90fe;
+    }
+
+    #title {
+      color: #fff;
+      background-color: #4d90fe;
+      font-size: 25px;
+      font-weight: 500;
+      padding: 6px 12px;
+    }
+    #target {
+      width: 345px;
+    }
+    
+  </style>
+</head>
+<body onload="GetPersonalInfo()">
+  <!--=========================================================================-->
+  <!--========================== This is the navbar ===========================-->
+  <!--=========================================================================-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html" style="color:white">FOOD PIN</a> 
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="navbar-collapse collapse">
+       <ul class="nav navbar-nav navbar-right">
+         <li><a href="#" style="color:white">Home</a></li>
+         <li><a href="#" style="color:white">Help</a></li>
+         <li><a href="#" style="color:white">Edit Profile</a></li>
+         <li><a href="#" style="color:white">Privacy</a></li>
+       </ul>
+     </div> 
+   </div>
+ </nav>
+ <!--=========================================================================-->
+ <!--=============== This is the code for the setting ========================-->
+ <!--=========================================================================-->
+ <ul class="nav navbar-nav navbar-right">
+  <li><a href="#"><span class="fa fa-cog color-white fa-2x" aria-hidden="true"></span></a></li>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<!--=============================================================-->
+<!--=========== This code for the username,following,pic,========-->
+<!--=============================================================-->
+<br>
+<br>
+<div align="center">
+  <h1 style= "color:white">My Profile</h1>
+  <img src="http://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" height="200" width="200">
+  <h4 style="color:white">Jane Doe<br>I wish this whole world was made out of food.<br>Friends:<br>65</h4>
+</div>
+<!--=============================================================-->
+<!--============= Br makes a space between two parts=============-->
+<!--=============================================================-->
+
+<br>
+<br>
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Map</div>
+        <div class="panel-body" style="height:300px">
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          <div id="map"></div>
+        </div>
+        <div class="panel-footer">
+          <!--===============================================================-->
+          <!--=============== This is the code for sharing ==================-->
+          <!--==============================================================-->
+          <i class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
+          <a <i class="fa fa-facebook-official fa-2x"  style="color:blue" aria-hidden="true"></i>
+            <a href="https://plus.google.com/"><i class="fa fa-google-plus-square fa-2x" style="color:red"  aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <!--=============================================================-->
+        <!--====================== This is the review====================-->
+        <!--=============================================================-->
+      </div>
+      <div class="col-sm-6"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">Review</div>
+          <div class="panel-body" style="height: 300px">
+            <div align="center">
+              <h6>The Deli</h6>
+              <h6>3455 Crescent St, Queens, NY 11106</h6>
+              <h6>* * * * * </h6>
+              <h6>Comment:</h6>
+              <h6>Great! I would recommend.</h6>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <!--=============================================================-->
+            <!--=============== This is the button to add reviews ===========-->
+            <!--=============================================================-->
+            <div align="center">
+              <i class="fa fa-plus-square fa-2x" style="align-items: center"   aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div><br>
+
+
+</div><br><br>
+<!--=============================================================-->
+<!--=============== This is the menu bar for the bottom =========-->
+<!--=============================================================-->
+
+<footer class="container-fluid text-center" style= "background-color: salmon">
+ <a href="#"><i class="fa fa-search fa-2x color-white" style="padding: 25px; aria-hidden="true"></i></a>
+
+ <a href="#"><i class="fa fa-line-chart fa-2x color-white" style="padding: 25px;"aria-hidden="true"></i></a>
+ <a href="#"><i class="fa fa-file-text-o fa-2x color-white" style="padding: 25px;"aria-hidden="true"></i></a>
+ <a href="file:///Users/karenh/Desktop/Girls%20Who%20Code%202017/bootstrap-3.3.7-dist/Profile.html"><i class="fa fa-user fa-2x color-white" style="padding: 25px;"aria-hidden="true"></i></a>
+
+</footer>
+<!--=============================================================-->
+<!--=============== This is all the code for the map=============-->
+<!--=============================================================-->
+<script>
+          // This example adds a search box to a map, using the Google Place Autocomplete
+          // feature. People can enter geographical searches. The search box will return a
+          // pick list containing a mix of places and predicted search terms.
+
+          // This example requires the Places library. Include the libraries=places
+          // parameter when you first load the API. For example:
+          // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+          function initAutocomplete() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -33.8688, lng: 151.2195},
+              zoom: 13,
+              mapTypeId: 'roadmap'
+            });
+
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function() {
+              searchBox.setBounds(map.getBounds());
+            });
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function() {
+              var places = searchBox.getPlaces();
+
+              if (places.length == 0) {
+                return;
+              }
+
+              // Clear out the old markers.
+              markers.forEach(function(marker) {
+                marker.setMap(null);
+              });
+              markers = [];
+
+              // For each place, get the icon, name and location.
+              var bounds = new google.maps.LatLngBounds();
+              places.forEach(function(place) {
+                if (!place.geometry) {
+                  console.log("Returned place contains no geometry");
+                  return;
+                }
+                var icon = {
+                  url: place.icon,
+                  size: new google.maps.Size(71, 71),
+                  origin: new google.maps.Point(0, 0),
+                  anchor: new google.maps.Point(17, 34),
+                  scaledSize: new google.maps.Size(25, 25)
+                };
+
+                // Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                  map: map,
+                  icon: icon,
+                  title: place.name,
+                  position: place.geometry.location
+                }));
+
+                if (place.geometry.viewport) {
+                  // Only geocodes have viewport.
+                  bounds.union(place.geometry.viewport);
+                } else {
+                  bounds.extend(place.geometry.location);
+                }
+              });
+              map.fitBounds(bounds);
+            });
+          }
+
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIdzra81MrSC0No8UZKXDn478VLxr_ecc&libraries=places&callback=initAutocomplete"
+        async defer></script>
+      </body>
+      </html>
